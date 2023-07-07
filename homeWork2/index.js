@@ -1,4 +1,4 @@
-const body = document.createElement('body');
+const body = document.querySelector('body');
 const footer = document.createElement('footer');
 const footerContainer = document.createElement('div');
 footerContainer.setAttribute('class', 'footer-container');
@@ -100,4 +100,4 @@ footerContainer.append(linkSupport);
 footerContainer.append(inputIcon);
 footer.append(footerContainer);
 
-document.body.append(footer);
+body.append(footer);
