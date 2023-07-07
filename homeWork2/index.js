@@ -100,4 +100,4 @@ footerContainer.append(linkSupport);
 footerContainer.append(inputIcon);
 footer.append(footerContainer);
 
-body.append(footer);
+document.body.append(footer);
