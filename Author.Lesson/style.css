@@ -14,7 +14,8 @@ body {
 
 }
 
-section {
+section, main {
+    display: none;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -26,6 +27,7 @@ section {
     box-shadow: 7px 7px 60px #000;
 }
 
+
 h1 {
     text-transform: uppercase;
     font-size: 1.8em;
@@ -33,7 +35,8 @@ h1 {
     margin-bottom: 2em;
 }
 
-.control input {
+.control input,
+.emailPassword input {
     width: 100%;
     display: block;
     padding: 10px;
@@ -44,7 +47,7 @@ h1 {
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
 }
 
-.signup {
+.signup, .login {
     width: 100%;
     display: block;
     padding: 10px;
@@ -59,7 +62,7 @@ h1 {
     transition: opacity .3s ease;
 }
 
-.signup:hover {
+.signup:hover, .login:hover {
     opacity: 1;
 }
 
@@ -70,4 +73,55 @@ p {
     left: 50%;
 
     transform: translate(-50%, -50%);
+}
+.logout {
+    display: none;
+    margin: auto;
+    width: 10%;
+    padding: 10px;
+    background: #640d0d;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    color: #f0e6e6;
+    font-size: 1em;
+    opacity: .7;
+    transition: opacity .3s ease;
+    position: absolute;
+    bottom: 50%;
+    left: 45%;
+}
+.logout:hover,.firstLogIn:hover, .firstSignUp:hover {
+    opacity: 1;
+    transition: opacity .3s ease;
+}
+.emailPassword {
+    display: none;
+}
+.logInSignUp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+    width: 380px;
+    padding: 50px 30px;
+    border-radius: 10px;
+    box-shadow: 7px 7px 60px #000;
+    display: flex;
+    justify-content: space-between;
+}
+.firstLogIn, .firstSignUp {
+    width: 45%;
+    display: block;
+    padding: 10px;
+    background: #640d0d;
+    border: none;
+    outline: none;
+    margin: 0.5em 0;
+    text-transform: uppercase;
+    color: #f0e6e6;
+    font-size: 1.2em;
+    opacity: .7;
+    transition: opacity .3s ease;
 }
