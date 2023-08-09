@@ -99,7 +99,7 @@ loginBtn.addEventListener("click", () => {
     requiredPar.innerText = "You have been logged in";
     requiredPar.style.color = "#e6d5d5";
 
-    section.innerHTML = "";
+    // section.innerHTML = "";
     section.style.display = "none";
 
     main.style.display = "none";
@@ -115,12 +115,12 @@ const firstLogIn = document.querySelector(".firstLogIn");
 const firstSignUp = document.querySelector(".firstSignUp");
 const firstDiv = document.querySelector(".logInSignUp");
 
-firstLogIn.addEventListener("click", () => {
+firstSignUp.addEventListener("click", () => {
   section.style.display = "block";
   firstDiv.style.display = "none";
 });
 
-firstSignUp.addEventListener("click", () => {
+firstLogIn.addEventListener("click", () => {
   section.style.display = "none";
   firstDiv.style.display = "none";
   main.style.display = "block";
