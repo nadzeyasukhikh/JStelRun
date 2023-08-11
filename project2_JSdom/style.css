@@ -1,0 +1,19 @@
+label {
+    width: 100px;
+    display: inline-block;
+    justify-content: center;
+    margin-top: 5px;
+    color: rgb(75, 29, 117);
+    
+}
+div {
+    
+    width: 200px;
+    height: 500px;
+    border: 2px solid rgb(18, 3, 53);
+    border-radius: 5px;
+}
+p {
+    text-align: center;
+    color: rgb(48, 48, 139);
+}
