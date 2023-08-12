@@ -15,8 +15,8 @@
 // 3. Отфильтруйте массив, чтобы удалить элементы, не соответствующие определенным критериям.
 
 // let array = [34, 2, -3, 0, 15, 8, 23];
-// let array1 = array.filter((el) => el % 2 === 0);
-// console.log(array1)
+// array = array.filter((el) => el % 2 === 0);
+// console.log(array)
 
 // 4. Перебрать массив и обновить каждый элемент до нового значения.
 
@@ -68,11 +68,11 @@
 
 // let array = [1, 2, 3, 2, 4, 7, 3, 5, 7];
 
-// let array1 =  array.filter((el, ind, arr) => {
+//  array =  array.filter((el, ind, arr) => {
 //     return arr.indexOf(el) === ind;
 // });
 
-//  console.log(array1);
+//  console.log(array);
 
 // 10. Сгруппируйте элементы в массиве по определенному критерию с помощью функции обратного вызова.
 
@@ -84,8 +84,8 @@
 //   { name: "Coconut", price: 90, quantity: 2 },
 //   { name: "Peach", price: 45, quantity: 2 },
 // ];
-// let cartItems1 = cartItems.filter((item) => item.price > 45);
-// console.log(cartItems1);
+//  cartItems = cartItems.filter((item) => item.price > 45);
+// console.log(cartItems);
 
 // 11. Сортировка массива в определенном порядке с помощью функции обратного вызова.
 
@@ -95,10 +95,10 @@
 
 // 12. Выполните итерацию по массиву и выполните побочный эффект для каждого элемента, например, обновите модель DOM.
 
-// const items = ['Apples', 'Bananas', 'Oranges', 'Grape']
+// let items = ['Apples', 'Bananas', 'Oranges', 'Grape']
 
-// const items1 = items.map((el) => `<li>${el}</li>`)
-// console.log(items1)
+//  items = items.map((el) => `<li>${el}</li>`)
+// console.log(items)
 
 // 13. Объедините два массива в новый массив, используя метод forEach.
 // let num = [34, 2, -3, 0, 15, 8, 23];
@@ -141,50 +141,144 @@
 // console.log(changeTheQuantity);
 
 // 16. Реализуйте функцию обратного вызова, которая будет вызываться для каждого элемента массива, пока не вернет значение false.
-//   for (let el of arr) {
-//     if (!callback(el)) {
-//       console.log(false);
-//       return false;
+
+
+// let numbers = [2, 4, 6, 7, 8];
+// numbers.find(el => {
+//     if(el % 2 === 0) {
+//         console.log(el)
 //     } else {
-//       console.log(true);
+//         console.log(false);
+//         return el
 //     }
-//   }
-// }
-function seeFalse(arr, callback) {
-
-arr.find(el => {
-    console.log(el);
-    return !callback(el);
-});
-console.log(false);
-}
-let numbers = [2, 4, 6, 7, 8];
-
-seeFalse(numbers, (el) => { 
-  return el % 2 === 0;
-});
+// });
 
 // 17. Перебрать массив и вычислить среднее значение его значений.
 
+// let num = [34, 2, -3, 0, 15, 8, 23];
+// let result = num.reduce((sum,elem) => sum + elem / num.length, 0)
+// console.log(result);
+
+
 // 18. Перебрать массив и удалить любой элемент, соответствующий определенному критерию.
+
+// let num = [34, 2, -3, 0, 15, 8, 23];
+//  num = num.filter(el => el > 10)
+
+//  console.log(num)
 
 // 19. Создайте новый массив элементов, соответствующих определенным критериям.
 
+// let arr = [34, -8, 5, 78, 579, 42, 8, -73, 98, 7, 3]
+// let arr2 =[]
+// arr.forEach(el => {
+//     if(el > 40) {
+//         arr2.push(el);
+//     }
+// });
+// console.log(arr2)
+    
+
 // 20. Выполните итерацию по массиву и обновите свойство каждого элемента, используя метод forEach.
+
+// let cartItems = [
+//         { name: 'Apple', price: 120, quantity: 3 },
+//         { name: 'Banana', price: 50, quantity: 5 },
+//         { name: 'Orange', price: 6, quantity: 2 },
+//         { name: 'PineApple', price: 2, quantity: 2 },
+//         { name: 'Coconut', price: 90, quantity: 2 },
+//         { name: 'Peach', price: 45, quantity: 2 },
+//     ]
+//     cartItems.forEach(el => {
+//         el.price = el.price * 2;
+//         el.quantity = el.quantity +3;
+//     });
+//     console.log(cartItems);
+
 
 // 21. Объедините все строки в массиве в одну строку, используя метод forEach.
 
+// let items = ['Apples', 'Bananas', 'Oranges', 'Grape'];
+// let items2 = "";
+// items.forEach(el => {
+//     items2 += el + " ";
+// });
+// console.log(items2)
+
+
 // 22. Создайте новый массив объектов, добавив к каждому объекту новое свойство с помощью метода forEach.
+
+// let cartItems = [
+//   { name: "Apple", price: 120, quantity: 3 },
+//   { name: "Banana", price: 50, quantity: 5 },
+//   { name: "Orange", price: 6, quantity: 2 },
+//   { name: "PineApple", price: 2, quantity: 2 },
+//   { name: "Coconut", price: 90, quantity: 2 },
+//   { name: "Peach", price: 45, quantity: 2 },
+// ];
+// cartItems.forEach((el) => {
+//   el.discont = 15;
+// });
+// console.log(cartItems);
 
 // 23. Подсчитайте, сколько раз элемент появляется в массиве, используя метод forEach.
 
+// let num = [1, 2, 3, 2, 4, 7, 3, 5, 7];
+// let count = {};
+// num.forEach(el => {
+//     count[el] = count[el] + 1 || 1;
+// });
+// console.log(count);
+
 // 24. Суммируйте значения определенного свойства в массиве объектов, используя метод forEach.
 
+// let cartItems = [
+//       { name: "Apple", price: 120, quantity: 3 },
+//       { name: "Banana", price: 50, quantity: 5 },
+//       { name: "Orange", price: 6, quantity: 2 },
+//       { name: "PineApple", price: 2, quantity: 2 },
+//       { name: "Coconut", price: 90, quantity: 2 },
+//       { name: "Peach", price: 45, quantity: 2 },
+//     ];
+
+//     let sum = 0;
+//     cartItems.forEach(el => {
+//         sum += el.price
+//     });
+//     console.log(sum);
 // 25. Удалите элемент из массива, если он соответствует определенным критериям, используя метод forEach.
 
+// let arr = [34, -8, 5, 78, 579, 42, 8, -73, 98, 7, 3];
+// let arr2 = [];
+// arr.forEach(el => {
+//     if(el > 50) {
+//         arr2.push(el);
+//     }
+// });
+// arr = arr2
+// console.log(arr)
+
 // 26. Создайте новый массив, сопоставив существующий массив с массивом логических значений, используя метод forEach.
+// let arr = [1, 2, 3, 4, 5 ,6 ,7];
+// let arr1 = [true, false, true, false, true, false, true];
+// let result = [];
+// arr.forEach((el, ind) => {
+//     if(arr1[ind] === true) {
+//         result.push(el);
+//     }
+// });
+// console.log(result);
 
 // 27. Найдите первый элемент в массиве, который соответствует определенному критерию, используя метод forEach.
+
+let arr = [34, -8, 5, 78, 579, 42, 8, -73, 98, 7, 3]
+let arr2;
+arr.forEach(el => {
+    if(arr2 === undefined && el > 40) {
+        arr2 = el;
+    }
+});
+console.log(arr2);
 
 // 28. Создайте новый массив, отфильтровав существующий массив на основе свойства его объектов, используя метод forEach.
 
