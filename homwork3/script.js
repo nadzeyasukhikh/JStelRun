@@ -327,16 +327,7 @@
 //     });
 //     console.log(cartItems);
 
-// const arr = [3, 2, 4, 4, 5, 56, 43, 2, 1, 7];
-// arr.reverse();
-// arr.forEach((el, index) => {
-//     if(el === 4 || el === 7) {
-// arr.splice(index, 1);
-//     }
 
-// });
-// arr.reverse();
-// console.log(arr);
 
 // 31. Сгруппируйте объекты в массиве по определенному свойству, используя метод forEach.
 
