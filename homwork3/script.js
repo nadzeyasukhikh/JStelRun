@@ -304,13 +304,13 @@
 // 29. Обновите массив на месте, удалив определенные элементы, соответствующие определенным критериям, с помощью метода forEach.
 
 // let num = [34, -8, 5, 78, 42, 8, -73, 98, 7, 3];
-
+// let num1 = [];
 // num.forEach((el, ind) => {
 //     if(el > 45 ) {
-//     num.splice(ind, 1);
+//     num1.push(el);
 // }
 // });
-// console.log(num);
+// console.log(num1);
 
 // 30. Измените массив объектов, сопоставив каждый объект с новым объектом с добавленным свойством, используя метод forEach.
 
@@ -331,22 +331,133 @@
 
 // 31. Сгруппируйте объекты в массиве по определенному свойству, используя метод forEach.
 
-// я устала переводить с китайского)))
+// let cartItems = [
+//           { name: "Apple", price: 120, quantity: 3 },
+//           { name: "Banana", price: 50, quantity: 5 },
+//           { name: "Orange", price: 6, quantity: 2 },
+//           { name: "PineApple", price: 2, quantity: 2 },
+//           { name: "Coconut", price: 90, quantity: 2 },
+//           { name: "Peach", price: 45, quantity: 2 },
+//         ];
+
+//         cartItems.forEach(el => {
+//             cartItems.sort((a, b) => a.price - b.price)
+//         });
+//         console.log(cartItems);
 
 // 32. Создайте новый массив объектов, отфильтровав существующий массив объектов на основе свойства с помощью метода forEach.
 
+// let cartItems = [
+//     { name: "Apple", price: 120, quantity: 3 },
+//     { name: "Banana", price: 50, quantity: 5 },
+//     { name: "Orange", price: 6, quantity: 2 },
+//     { name: "PineApple", price: 2, quantity: 2 },
+//     { name: "Coconut", price: 90, quantity: 2 },
+//     { name: "Peach", price: 45, quantity: 2 },
+//   ];
+
+//   let cartItems1 = [];
+// cartItems.forEach(el => {
+//     if (el.price >= 50) {
+//         cartItems1.push(el);
+//     }
+// });
+
+// console.log(cartItems1);
 // 33. Вычислить произведение всех чисел в массиве с помощью метода forEach.
+
+// let num = [34, -8, 5, 78, 42, 8, -73, 98, 7, 3];
+// let num1 = 1;
+// num.forEach(el => {
+//     num1 *= el
+// });
+// console.log(num1);
 
 // 34. Найдите первый индекс элемента в массиве, используя метод forEach.
 
+// let num = [34, -8, 5, 78, 42, 8, -73, 98, 7, 3];
+// let foundIndex = -1;
+
+// num.forEach((el, ind) => {
+//     if (el > 60 && foundIndex === -1) {
+//         foundIndex = ind;
+//     }
+// });
+
+// console.log(foundIndex);
+
 // 35. Создайте новый массив, объединив два существующих массива с помощью метода forEach.
+// let num = [34, -8, 5, 78, 42, 8, -73, 98, 7, 3];
+// let arr = [1, 2, 3, 4, 5 ,6 ,7];
+// let numArr = [];
+// num.forEach(el => {
+//     numArr.push(el);
+// });
+
+// arr.forEach(el => {
+//     numArr.push(el);
+// });
+// console.log(numArr)
 
 // 36. Найдите сумму всех четных чисел в массиве, используя метод forEach.
 
+// let num = [34, -8, 5, 78, 42, 8, -73, 98, 7, 3];
+// let sum = 0;
+// num.forEach(el => {
+//     if(el % 2 === 0) {
+//        sum += el 
+//     }
+// });
+// console.log(sum)
 // 37. Удалите все ложные значения из массива, используя метод forEach.
+
+// let arr = [0, 1, false, 2, "", 3, null, undefined, NaN, 4];
+// let newArr = [];
+
+// arr.forEach(el => {
+//     if (el) {
+//         newArr.push(el);
+//     }
+// });
+// console.log(newArr)
 
 // 38. Создайте новый массив, сопоставив существующий массив с массивом объектов, используя метод forEach.
 
+// let num = [1, 2, 3, 4, 5];
+// let obj = [];
+
+// num.forEach(el => {
+//     obj.push({value: el});
+// });
+
+// console.log(obj);  
+
 // 39. Найдите индекс последнего элемента в массиве, который соответствует определенному критерию, используя метод forEach.
 
+// let numbers = [34, 52, 5, 78, 42, 8, 53, 98, 7, 3];
+// let lastIndex = -1;
+
+// numbers.forEach((value, index) => {
+//     if (value > 50) {
+//         lastIndex = index;
+//     }
+// });
+
+// console.log(lastIndex);
+
 // 40. Обновите объект в массиве объектов на основе определенных критериев, используя метод forEach.
+
+let cartItems = [
+        { name: "Apple", price: 120, quantity: 3 },
+        { name: "Banana", price: 50, quantity: 5 },
+        { name: "Orange", price: 6, quantity: 2 },
+        { name: "PineApple", price: 2, quantity: 2 },
+        { name: "Coconut", price: 90, quantity: 2 },
+        { name: "Peach", price: 45, quantity: 2 },
+      ];
+      cartItems.forEach(el => {
+        if(el.name === "Orange") {
+            el.price = 37
+        }
+      });
+      console.log(cartItems)
