@@ -61,11 +61,11 @@
 //   console.log(response);
 // })
 
-// const input1 = document.getElementById('input1');
-// const input2 = document.getElementById('input2');
-// const fetchButton = document.getElementById('fetchButton');
-// const errorDiv = document.getElementById('error');
-// const postsContainer = document.getElementById('postsContainer');
+// const input1 = document.querySelector('#input1');
+// const input2 = document.querySelector('#input2');
+// const fetchButton = document.querySelector('#fetchButton');
+// const errorDiv = document.querySelector('#error');
+// const postsContainer = document.querySelector('#postsContainer');
 
 // fetchButton.addEventListener('click', fetchPosts);
 
@@ -73,25 +73,18 @@
 //     errorDiv.textContent = '';
 //     postsContainer.innerHTML = ''; 
 
-//     const number1 = parseInt(input1.value, 10);
-//     const number2 = parseInt(input2.value, 10);
+//     const number1 = input1.value;
+//     const number2 = input2.value;
 
-//     if (isNaN(number1) || isNaN(number2)) {
-//         errorDiv.textContent = 'Введите корректные числа.';
-//         return;
-//     }
-
-//     if (number1 > number2) {
-//         errorDiv.textContent = 'Первое число должно быть меньше второго.';
-//         return;
-//     }
-
-//     if (number2 > 100) {
-//         fetchPostsFromAPI();
-//         errorDiv.textContent = 'Второе число не должно превышать 100.';
-//         return;
-//     }
-
+//     isNaN(number1) || isNaN(number2)
+//     ? (errorDiv.textContent = 'Введите корректные числа.')
+//     : number1 > number2
+//         ? (errorDiv.textContent = 'Первое число должно быть меньше второго.')
+//         : number2 > 100
+//             ? (fetchPostsFromAPI(), errorDiv.textContent = 'Второе число не должно превышать 100.')
+//             : number1 < 0 || number2 < 0
+//             ? (errorDiv.textContent = 'Числа не должны быть отрицательными')
+//             : null;
 //     fetchPostsFromAPI();
 // }
 
@@ -99,8 +92,8 @@
 //     fetch(URLPosts)
 //         .then(response => response.json())
 //         .then(allPosts => {
-//             const start = parseInt(input1.value, 10);
-//             const end = parseInt(input2.value, 10);
+//             const start = input1.value;
+//             const end = input2.value;
 
 //             const selectedPosts = allPosts.filter(post => post.id >= start && post.id <= end);
             
@@ -147,6 +140,12 @@
 }).then((response) => {
   console.log(response);
 })
+const author = document.querySelector(".author");
+const verify = document.querySelector(".verify");
+
+author.addEventListener("click", authorize);
+verify.addEventListener("click", verifyCompany);
+
 
 function authorize() {
     const usernameValue = document.querySelector('#username').value;
@@ -174,6 +173,4 @@ function verifyCompany() {
         alert('Incorrect company name!');
     }
     
-
-    alert('Company verified!');
 }
