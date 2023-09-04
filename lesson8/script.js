@@ -167,10 +167,7 @@ function authorize() {
 
 function verifyCompany() {
     const companyName = document.querySelector('#companyName').value;
-    if (companyName === authorizedUser.name) {
-        alert('Вы успешно вошли!');
-    } else {
-        alert('Incorrect company name!');
-    }
+    companyName === authorizedUser.name ? alert('Вы успешно вошли!') : alert('Incorrect company name!')
+        
     
 }
