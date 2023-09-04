@@ -50,76 +50,130 @@
 //     });
 // });
 
-const URLPosts = "https://jsonplaceholder.typicode.com/posts";
 
 
-fetch(URLPosts).then((data) => {
+// const URLPosts = "https://jsonplaceholder.typicode.com/posts";
+
+
+// fetch(URLPosts).then((data) => {
+//   return data.json();
+// }).then((response) => {
+//   console.log(response);
+// })
+
+// const input1 = document.getElementById('input1');
+// const input2 = document.getElementById('input2');
+// const fetchButton = document.getElementById('fetchButton');
+// const errorDiv = document.getElementById('error');
+// const postsContainer = document.getElementById('postsContainer');
+
+// fetchButton.addEventListener('click', fetchPosts);
+
+// function fetchPosts() {
+//     errorDiv.textContent = '';
+//     postsContainer.innerHTML = ''; 
+
+//     const number1 = parseInt(input1.value, 10);
+//     const number2 = parseInt(input2.value, 10);
+
+//     if (isNaN(number1) || isNaN(number2)) {
+//         errorDiv.textContent = 'Введите корректные числа.';
+//         return;
+//     }
+
+//     if (number1 > number2) {
+//         errorDiv.textContent = 'Первое число должно быть меньше второго.';
+//         return;
+//     }
+
+//     if (number2 > 100) {
+//         fetchPostsFromAPI();
+//         errorDiv.textContent = 'Второе число не должно превышать 100.';
+//         return;
+//     }
+
+//     fetchPostsFromAPI();
+// }
+
+// function fetchPostsFromAPI() {
+//     fetch(URLPosts)
+//         .then(response => response.json())
+//         .then(allPosts => {
+//             const start = parseInt(input1.value, 10);
+//             const end = parseInt(input2.value, 10);
+
+//             const selectedPosts = allPosts.filter(post => post.id >= start && post.id <= end);
+            
+//             displayPosts(selectedPosts);
+//         })
+//         .catch(error => {
+//             console.log("Ошибка при получении данных:", error);
+//         });
+// }
+
+// function displayPosts(posts) {
+//     posts.forEach(post => {
+//         const postCard = document.createElement('div');
+//         postCard.className = 'postCard';
+//         postCard.innerHTML = `
+        
+//         <h3>${post.id}</h3>
+//             <h3>${post.title}</h3>
+//             <p>${post.body}</p>
+            
+//         `;
+//         postsContainer.appendChild(postCard);
+//     });
+// }
+
+// fetchBtn.addEventListener("click", () => {
+//     fetch(URLPhotos + "?postId=1&id=1")
+//       .then((response) => {
+//         return response.json();
+//       })
+//       .then((data) => {
+//         console.log(data);
+//       });
+//   });
+//   const URLPhotos = "https://jsonplaceholder.typicode.com/comments";
+  
+//   const fetchBtn = document.querySelector("button");
+
+
+
+  const URLUsers = "https://jsonplaceholder.typicode.com/users"
+  fetch(URLUsers).then((data) => {
   return data.json();
 }).then((response) => {
   console.log(response);
 })
 
-const input1 = document.getElementById('input1');
-const input2 = document.getElementById('input2');
-const fetchButton = document.getElementById('fetchButton');
-const errorDiv = document.getElementById('error');
-const postsContainer = document.getElementById('postsContainer');
+function authorize() {
+    const usernameValue = document.querySelector('#username').value;
+    const emailValue = document.querySelector('#email').value;
 
-fetchButton.addEventListener('click', fetchPosts);
-
-function fetchPosts() {
-    errorDiv.textContent = '';
-    postsContainer.innerHTML = ''; 
-
-    const number1 = parseInt(input1.value, 10);
-    const number2 = parseInt(input2.value, 10);
-
-    if (isNaN(number1) || isNaN(number2)) {
-        errorDiv.textContent = 'Введите корректные числа.';
-        return;
-    }
-
-    if (number1 > number2) {
-        errorDiv.textContent = 'Первое число должно быть меньше второго.';
-        return;
-    }
-
-    if (number2 > 100) {
-        fetchPostsFromAPI();
-        errorDiv.textContent = 'Второе число не должно превышать 100.';
-        return;
-    }
-
-    fetchPostsFromAPI();
-}
-
-function fetchPostsFromAPI() {
-    fetch(URLPosts)
+    fetch(URLUsers)
         .then(response => response.json())
-        .then(allPosts => {
-            const start = parseInt(input1.value, 10);
-            const end = parseInt(input2.value, 10);
-
-            const selectedPosts = allPosts.filter(post => post.id >= start && post.id <= end);
-            
-            displayPosts(selectedPosts);
-        })
-        .catch(error => {
-            console.log("Ошибка при получении данных:", error);
+        .then(users => {
+            const user = users.find(user => user.username === usernameValue && user.email === emailValue);
+            if (user) {
+                authorizedUser = user;
+                document.querySelector('#authForm').style.display = 'none';
+                document.querySelector('#companyForm').style.display = 'block';
+            } else {
+                alert('User not found!');
+            }
         });
 }
 
-function displayPosts(posts) {
-    posts.forEach(post => {
-        const postCard = document.createElement('div');
-        postCard.className = 'postCard';
-        postCard.innerHTML = `
-        
-        <h3>${post.id}</h3>
-            <h3>${post.title}</h3>
-            <p>${post.body}</p>
-            
-        `;
-        postsContainer.appendChild(postCard);
-    });
+function verifyCompany() {
+    const companyName = document.querySelector('#companyName').value;
+    if (companyName === authorizedUser.name) {
+        alert('Вы успешно вошли!');
+    } else {
+        alert('Incorrect company name!');
+    }
+    
+
+    alert('Company verified!');
 }

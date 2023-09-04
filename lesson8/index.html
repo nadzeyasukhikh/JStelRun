@@ -7,11 +7,23 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <input type="text" id="input1" placeholder="Введите первое число">
+    <!-- <input type="text" id="input1" placeholder="Введите первое число">
     <input type="text" id="input2" placeholder="Введите второе число">
     <button id="fetchButton">get</button>
     <div id="error" ></div>
-    <div id="postsContainer"></div>
+    <div id="postsContainer"></div> -->
+
+    <div id="authForm">
+        <input type="text" id="username" placeholder="Username">
+        <input type="text" id="email" placeholder="Email">
+        <button onclick="authorize()">Authorize</button>
+    </div>
+
+    <div id="companyForm" style="display: none;">
+        <input type="text" id="companyName" placeholder="Company Name">
+        <button onclick="verifyCompany()">Verify</button>
+    </div>
+
 
     <script src="./script.js"></script>
 </body>
